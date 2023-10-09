@@ -1,19 +1,27 @@
 import {useState} from 'react'
+import { useContext } from 'react'
+import { primaryContext } from '../../Context/primaryContext'
 
 const ComplimentButton = () => {
-    const[clicks, setClicks]= useState("")
+  const {currentmood, setCurrentMood, compliments, setCompliments } = useContext(primaryContext)
+  
 
-if (compliments < 5){
-    setCurrentMood("sad")
-}else if (compliments >= 5 && < 9 ){
-    setCurrentMood("fine")
-}else if (compliments>=10 && <15){
-    setCurrentMood("happy")
-}
+  const face = (compliments) => {
+    if (compliments < 5) {
+       return setCurrentMood("sad");
+    } else if (compliments >= 5 && compliments <= 10) {
+      return setCurrentMood("fine");
+    } else if (compliments > 10) {
+    return setCurrentMood("happy");
+    }
+  }
 
   return (
     <>
-   <button onClick={()=> setClicks(clicks + 1)}>Compliments</button> 
+   <button onClick={()=> setCompliments(compliments + 1)}>Compliments</button> 
+
+{compliments}
+{currentmood}
 </>
   )
 }
