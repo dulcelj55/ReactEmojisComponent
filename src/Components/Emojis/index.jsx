@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import { primaryContext } from '../../Context/primaryContext'
 
 const Emojis = () => {
-  const {currentmood, setCurrentMood, compliments} = useContext(primaryContext)
+  const {currentMood, setCurrentMood, compliments} = useContext(primaryContext)
   
 
 
@@ -19,10 +19,10 @@ const Emojis = () => {
   return (
    <>
    <div>
-{currentmood}
-    <p>{currentmood === "happy" ? '😃' : "working "}</p>
-    <p>{currentmood === "neutral" ? "😐" : " working"}</p>
-    <p>{currentmood === "sad" ? "😕" : "working"}</p>
+{currentMood}
+    <p>{currentMood === "happy" ? '😃' : " "}</p>
+    <p>{currentMood === "neutral" ? "😐" : " "}</p>
+    <p>{currentMood === "sad" ? "😕" : " "}</p>
    </div>
  
 
