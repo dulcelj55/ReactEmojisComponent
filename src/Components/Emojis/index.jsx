@@ -1,27 +1,30 @@
-import React from 'react'
+
 import { useContext } from 'react'
 import { primaryContext } from '../../Context/primaryContext'
-// import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
-// import TagFacesIcon from '@mui/icons-material/TagFaces';
-// import SentimentNeutralIcon from '@mui/icons-material/SentimentNeutral';
+
 const Emojis = () => {
-  const {currentmood} = useContext(primaryContext)
+  const {currentmood, setCurrentMood, compliments} = useContext(primaryContext)
   
 
- 
-   
-  
-  
- 
+
+  if (compliments < 5) {
+    setCurrentMood("sad");
+  } else if (compliments >= 5 && compliments <= 9) {
+    setCurrentMood("neutral");
+  } else if (compliments >= 10 && compliments <= 15) {
+    setCurrentMood("happy");
+  }
 
 
   return (
    <>
- face is :{currentmood}
- <br/>
-{/* <TagFacesIcon/> 
-< SentimentVeryDissatisfiedIcon/>
-<SentimentNeutralIcon /> */}
+   <div>
+{currentmood}
+    <p>{currentmood === "happy" ? '😃' : "working "}</p>
+    <p>{currentmood === "neutral" ? "😐" : " working"}</p>
+    <p>{currentmood === "sad" ? "😕" : "working"}</p>
+   </div>
+ 
 
    </>
   )

@@ -10,6 +10,7 @@ function App() {
 
   return (
     <>
+    <h1>Mood Tracker</h1>
     <Emojis/>
     <ComplimentButton/>
      

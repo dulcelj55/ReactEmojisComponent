@@ -2,8 +2,10 @@ import { createContext } from "react";
 import {useState} from 'react'
 
  export const primaryContext = createContext();
-    const PrimaryProvider = (props) =>{
-    const[currentMood, setCurrentMood] = useState('sad')
+
+const PrimaryProvider = (props) =>{
+
+    const[currentMood, setCurrentMood] = useState('')
     const [compliments, setCompliments] = useState(0)
   
 
